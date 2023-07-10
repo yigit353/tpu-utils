@@ -2,7 +2,7 @@
 
 # Variables
 ZONE="europe-west4-a"
-TPU_NAME="tpu-pretraining-clean-128"
+TPU_NAME=${1}
 ACCELERATOR_TYPE="v3-8"
 NETWORK="default"
 VERSION="1.15.3"
@@ -11,7 +11,7 @@ SLEEP_TIME=300 # 5 minutes in seconds
 # Function to create TPU
 create_tpu() {
   echo "Trying to create TPU: ${TPU_NAME} in zone: ${ZONE}"
-  gcloud compute tpus create ${TPU_NAME} --zone=${ZONE} --accelerator-type=${ACCELERATOR_TYPE} \
+  gcloud compute tpus create "${TPU_NAME}" --zone=${ZONE} --accelerator-type=${ACCELERATOR_TYPE} \
     --network=${NETWORK} --version=${VERSION}
 }
 
