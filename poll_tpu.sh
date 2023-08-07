@@ -5,7 +5,7 @@ ZONE="europe-west4-a"
 TPU_NAME=${1}
 ACCELERATOR_TYPE="v3-8"
 NETWORK="default"
-VERSION="1.15.3"
+VERSION="2.9.1"
 SLEEP_TIME=300 # 5 minutes in seconds
 
 # Function to create TPU
